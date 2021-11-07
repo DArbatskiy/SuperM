@@ -10,30 +10,30 @@ import {AppProvider} from "./AppContext";
 
 function App() {
   return (
-      <AppProvider>
-        <BrowserRouter>
-          <Navbar />
-          <div className="container">
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route exact path="/about">
-                <About />
-              </Route>
-              <Route exact path="/products">
-                <Products />
-              </Route>
-              <Route path="/products/:id">
-                <ProductDetails />
-              </Route>
-              <Route exact path="/cart">
-                <Cart />
-              </Route>
-            </Switch>
-          </div>
-        </BrowserRouter>
-      </AppProvider>
+    <AppProvider>
+      <BrowserRouter>
+        <Navbar />
+        <div className="container">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/products">
+              <Products />
+            </Route>
+            <Route path="/products/:id">
+              <ProductDetails />
+            </Route>
+            <Route exact path="/cart">
+              <Cart />
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </AppProvider>
   );
 }
 

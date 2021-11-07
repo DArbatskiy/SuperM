@@ -1,10 +1,12 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { NavLink } from "react-router-dom";
 import {AppContext} from "./AppContext";
+import Button from "./Button";
 
 export default function Navbar() {
   const app = useContext(AppContext)
   const cart = app.cart
+  const isDarkTheme = app.isDarkTheme
   const cartCount = app.getCartCount()
 
   return (
@@ -13,6 +15,9 @@ export default function Navbar() {
         SuperM
       </NavLink>
       <ul>
+        <li className="nav-item">
+          <Button className="theme-switcher" onClick={app.onThemeClick}>{isDarkTheme?'Dark': 'Light'}</Button>
+        </li>
         <li className="nav-item">
           <NavLink exact activeClassName="active" to="/">
             Home
